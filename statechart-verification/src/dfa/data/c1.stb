@@ -1,0 +1,30 @@
+//atomic default-test - one level
+//test case - simulation:
+//only states - on init, the default state c12 is entered
+statechart  c1{
+  
+  events {
+	e;
+	No_event;
+	Error;
+  }
+  entry : {
+    }
+
+  exit  : {} 
+  functions {
+  input<||>() : int;
+  }
+	state c12{
+		entry:{}
+		exit:{}
+	}
+    state c11{
+		entry:{}
+		exit:{}
+	}
+    state c13{
+		entry:{}
+		exit:{}
+	}
+}

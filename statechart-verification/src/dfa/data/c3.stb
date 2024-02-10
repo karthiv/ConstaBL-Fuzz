@@ -1,0 +1,71 @@
+//atomic default-test - multi level
+//test case - simulation:
+//Shell state within  a shell state - on init, recursive entry and states marked as active to become active
+statechart  c3{
+  
+  events {
+	e;
+	No_event;
+	Error;
+  }
+  entry : {
+    }
+
+  exit  : {} 
+  functions {
+  input<||>() : int;
+  }
+	state c12{
+		entry:{}
+		exit:{}
+        state c11{
+		    entry:{}
+		    exit:{}
+                shell c131{
+                    entry:{}
+                    exit:{}
+                    state c1311{
+                        entry:{}
+                        exit:{}
+                        state c13111{ //active
+                        entry:{}
+                        exit:{}                            
+                        }
+                    }
+                    state c1312{
+                        entry:{}
+                        exit:{}
+                        state c13121{
+                            entry:{}
+                            exit:{}
+                            state c131211{
+                                entry:{}
+                                exit:{}
+                                shell cshell1{
+                                entry:{}
+                                exit:{}
+                                state a{ //active
+                                    entry:{}
+                                    exit:{}
+                                    
+                                }
+                                state b{  //active
+                                    entry:{}
+                                    exit:{}
+                                    
+                                }
+                            }
+                        }
+                    }    
+                }
+
+            }
+        }
+    }
+    
+    state c13{
+		entry:{}
+		exit:{}
+        
+	}
+}

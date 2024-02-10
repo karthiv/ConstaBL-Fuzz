@@ -1,0 +1,45 @@
+
+### Inputfile.txt
+constabl/<<filename>>.stbl
+
+The first set of test cases is to construct the sequential blocks as intended in ConStabL
+
+### Testing init event with sequential statements inside entry blocks
+test1.stbl - Only statechart SC 
+test2.stbl - Statechart SC with atomic default substate 
+test3.stbl - Statechart SC with composite default substate
+test4.stbl - Statechart SC with shell default substate
+test5.stbl - Statechart SC with nested shell default substate
+
+### Testing Exit from atomic states of SC - through event e1 - guard true
+test6.stbl - exit from substate of statechart SC - atomic to atomic - X;A;N - pass
+test7.stbl - exit from substate of statechart SC - atomic to composite- X;A;N - pass
+test8.stbl - exit from substate of statechart SC - atomic to shell- X;A;N - pass
+test9.stbl - exit from substate of statechart SC - atomic to shell within shell- X;A;N - yet to test
+
+### Testing Exit from composite states of SC- through event e1 - guard true
+test10.stbl - exit from substate of statechart SC - composite to atomic - X;A;N - pass
+test11.stbl - exit from substate of statechart SC - composite to composite- X;A;N - pass
+test12.stbl - exit from substate of statechart SC - composite to shell- X;A;N - pass
+test13.stbl - exit from substate of statechart SC - composite to shell within shell- X;A;N - yet to test
+
+### Testing Exit from atomic default substate of composite states of SC- through event e1 - guard true
+test14.stbl - exit from substate of statechart SC - inner state of composite to atomic - X;A;N - pass
+test15.stbl - exit from substate of statechart SC - inner state of composite to composite- X;A;N - pass
+test16.stbl - exit from substate of statechart SC - inner state of composite to shell- X;A;N - pass
+test17.stbl - exit from substate of statechart SC - inner state of composite to shell within shell- X;A;N - yet to test
+
+
+========
+test7.stbl - exit from substate of statechart SC - composite
+test8.stbl - exit from substate of statechart SC - shell
+test9.stbl - exit from substate of statechart SC - substate of composite
+test10.stbl - exit from substate of statechart SC - substate of shell (region)
+test11.stbl - exit from substate of statechart SC - substate of region (composite)
+test12.stbl - exit from substate of statechart SC - substate of region (atomic)
+test13.stbl - exit from substate of statechart SC - substate of region (shell)
+test14.stbl - exit from substate of statechart SC - substate of region (substate of shell)
+
+
+
+

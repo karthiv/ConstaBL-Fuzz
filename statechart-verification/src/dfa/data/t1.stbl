@@ -1,0 +1,18 @@
+// Globalisation test
+statechart sc {
+	events {
+		ev1;
+	}
+    state a {
+		x: int :local;
+
+		state b {
+		    x: int:local;
+
+		    state c {
+				x: boolean:local;
+				y: int:local;
+		    }
+		}
+    }
+}

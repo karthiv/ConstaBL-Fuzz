@@ -1,0 +1,54 @@
+statechart  chart{
+  
+  events {
+	e;
+	e1;
+  }
+  x:int:local;
+  entry : {x:=1;x:=2;}
+  exit  : {x:=3;x:=4;} 
+  functions {
+  input<||>() : int;
+  }
+    state A{
+        entry:{
+        x:=5;
+        x:=6;
+        }
+	      exit:{
+          x:=7;
+          x:=8;
+          }
+	    
+    }
+  state B{
+        entry:{
+          x:=9;
+          x:=10;
+          }
+        exit:{
+          x:=11;
+          x:=12;
+          }
+	state B1{
+		entry:{x:=19;x:=20;}
+		exit:{x:=21; x:=22;}
+		state B11{
+			entry:{x:=15; x:=16;}
+			exit:{x:=17;x:=18;}
+	
+
+    		}
+
+    	}
+
+    }
+
+    transition t1{
+        source: chart.A;
+        destination: chart.B.B1;
+        trigger: e1;
+        guard:(true);
+        action:{x:=23; x:=24;}
+	}   
+}
