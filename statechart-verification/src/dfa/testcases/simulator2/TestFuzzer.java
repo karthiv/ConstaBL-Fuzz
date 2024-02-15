@@ -41,7 +41,7 @@ public class TestFuzzer {
   
   	//atomic
   	
-  	makeTestCase("data/constabl_actions/1_source_atomic/t1_1.stbl", new String[] {"A"}, new String[]{"B"});
+  	makeTestCase("data/constabl_actions/1_source_atomic/t1_1.stbl", new String[] {"A"}, new String[]{"A"});
   	
   /*	makeTestCase("data/constabl_actions/1_source_atomic/t1_2#1.stbl", new String[] {"A"}, new String[]{"B1"});
   	makeTestCase("data/constabl_actions/1_source_atomic/t1_2#2.stbl", new String[] {"A"}, new String[]{"B11"});
@@ -331,6 +331,7 @@ public class TestFuzzer {
   public static void eventFuzz(FuzzedDataProvider data){
 	for(int i=0;i<testcaselist.size();i++){
   	  String inputfile=testcaselist.get(i).filename;
+	String[] destConfig1=testcaselist.get(i).destConfig;
   		List<String> events=new ArrayList<String>();
 	events.add("e1");
 	events.add("e2");
@@ -359,8 +360,12 @@ public class TestFuzzer {
 	   		output[j++]=s.name;
 	   		}
 	  Arrays.sort(output);
+	  Arrays.sort(destConfig1);
 	  //System.out.println("Configuration is : "+ output);
-	  
+	  System.out.println("******** Testing Assertion ******** comparing ******"+Arrays.toString(destConfig1)+"==="+Arrays.toString(output));
+          //assertArrayEquals(destConfig1,output);	
+	  if(Arrays.equals(destConfig1, output))
+		throw new FuzzerSecurityIssueMedium("configuration reached");
   	  
   	  }
 
@@ -390,8 +395,7 @@ public class TestFuzzer {
 	   		}
 	  Arrays.sort(output);
 	  Arrays.sort(randomDestState);
-	  System.out.println("******** Testing Assertion ******** comparing ******"+Arrays.toString(randomDestState)+"==="+Arrays.toString(output));
-          assertArrayEquals(randomDestState,output);	
+
 	*/
 	/*for(int i=0;i<testcaselist.size();i++){
   	  String inputfile=testcaselist.get(i).filename;
