@@ -39,9 +39,11 @@ public class TestFuzzer {
   static int i=0;
   public static void populate(){
   
-  	//atomic
+	makeTestCase("data/stabl_example.stbl", new String[] {"A"}, new String[]{"B1"});
+    
+	//atomic
   	
-  	makeTestCase("data/constabl_actions/1_source_atomic/t1_1.stbl", new String[] {"A"}, new String[]{"A"});
+  	//makeTestCase("data/constabl_actions/1_source_atomic/t1_1.stbl", new String[] {"A"}, new String[]{"A"});
   	
   /*	makeTestCase("data/constabl_actions/1_source_atomic/t1_2#1.stbl", new String[] {"A"}, new String[]{"B1"});
   	makeTestCase("data/constabl_actions/1_source_atomic/t1_2#2.stbl", new String[] {"A"}, new String[]{"B11"});

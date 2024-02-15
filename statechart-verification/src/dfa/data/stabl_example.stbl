@@ -1,0 +1,121 @@
+statechart  sc{
+  
+  events {
+	e;
+	e1;
+	e2;
+	e3;
+	e4;
+	e5;
+	e6;
+  }
+//  x1:int:local;
+//  x2:int:local;
+  entry : {}
+  exit  : {} 
+  functions {
+ // input<||>() : int:local;
+  }
+  state A{
+//	x1:int:local;
+//	p1:int:param;
+//	n:int:static;
+    entry:{}
+    exit:{}   
+	state A2{
+//		x1:int:local;
+//		p1:int:param;
+//		n:int:local;
+		entry:{}
+		exit:{}
+	} 
+	state A1{
+//		p3:int:param;
+		entry:{}
+		exit:{}
+	}
+ 
+transition t1{
+    source: sc.A.A2;
+    destination: sc.A.A1;
+    trigger: e3;
+    guard:(true);
+    action:{//p3 := 1;
+	}
+  }
+
+  transition t3{
+    source: sc.A.A1;
+    destination: sc.A.A2;
+    trigger: e1;
+    guard:(true);
+    action:{//p2 := 1;
+	}
+  }
+
+ }
+  state B{
+	//x1:int:local;
+	//x2:int:local;
+	//p2:int:param;
+	//n:int:static;
+    	
+	entry:{//n:=n+1;
+	}
+    	exit:{}
+
+	state B1{
+        //        x1:int:local;
+        //        x2:int:local;
+                entry:{}
+                exit:{}
+        }
+        state B2{
+	//	x2:int:local;
+        //        p3:int:param;
+                entry:{}
+                exit:{}
+        }
+	  transition t4{
+    		source: sc.B.B1;
+    		destination: sc.B.B2;
+    		trigger: e4;
+    		guard:(true);
+    		action:{//p3 := x2;
+		}
+  	}
+
+
+    }
+  
+  transition t5{
+    source: sc.A;
+    destination: sc.B;
+    trigger: e5;
+    guard:(true);
+    action:{
+	//p2 := 1;
+	}
+  }
+
+  transition t6{
+    source: sc.B;
+    destination: sc.A;
+    trigger: e6;
+    guard:(true);
+    action:{}
+  }
+
+  transition t2{
+    source: sc.A;
+    destination: sc.B.B2;
+    trigger: e2;
+    guard:(true);
+    action:{
+		//p2 := x1+x2;
+	}
+  }
+
+
+   
+}
