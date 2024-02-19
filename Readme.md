@@ -1,6 +1,6 @@
 ## The ConstaBL simulator can be run by following commands
 
-Prerequisites: Java 11 (JDK 11 & JRE 11)
+Prerequisites: Java 11 (JDK 11 & JRE 11), System configuration - 32 GB RAM, 10-50 GB free space, Ubuntu
 
 Run the following commands in the src\dfa directory
 
