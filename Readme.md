@@ -2,6 +2,8 @@
 
 Prerequisites: Java 11 (JDK 11 & JRE 11)
 
+Run the following commands in the src\dfa directory
+
 ## To clean all the class files
 
 make clean
@@ -17,4 +19,21 @@ make constabl-build
 ## To build the simulator and testcases
 
 make simulator2-build
+
+## To run the fuzz testcases
+
+make simulator2-eventfuzz
+
+To change the input testcase, edit the testcases/simulator2/TestFuzzer.java under the *maktestcase* method.
+
+## To run uwfms case study
+
+make simulator2-fuzzcasestudy
+
+To change the input testcase, edit the testcases/simulator2/TestCaseStudyFuzzer.java
+
+## Data files
+
+- location : src/dfa/data
+
 
